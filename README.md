@@ -8,3 +8,8 @@ This project is a pipeline that designed for recommendation system of imaginary 
 
 ## Modules and their working
 
+Module | Working
+------ | -------
+eventsimulator | Generates an 'event' and write the event to Kafka
+eventconsumer | Reads events from Kafka and write to PostgreSQL
+api | Returns the best selling 'maxProdCount' product using PostgreSQL events.
