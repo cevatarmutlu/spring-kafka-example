@@ -9,6 +9,6 @@ This project is a pipeline that designed for recommendation system of imaginary 
 
 Module | Working
 ------ | -------
-eventsimulator | Generates an 'event' and write the event to Kafka
-eventconsumer | Reads events from Kafka and write to PostgreSQL
-api | Returns the best selling 'maxProdCount' product using PostgreSQL events.
+[eventsimulator](eventsimulator) | Generates an 'event' and write the event to Kafka
+[eventconsumer](eventconsumer) | Reads events from Kafka and write to PostgreSQL
+[api](api) | Returns the best selling 'maxProdCount' product using PostgreSQL events.
