@@ -5,7 +5,7 @@ This project is a pipeline that designed for recommendation system of imaginary 
 ## Diagram
 
 
-## Modules and their working
+## Modules
 
 Module | Working
 ------ | -------
