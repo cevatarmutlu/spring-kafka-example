@@ -34,13 +34,13 @@ public class EventGenerator {
     }
 
     private String getProductId() {
-        int rowNumber = random.nextInt((int) rowCount);
+        int rowNumber = random.nextInt((int) rowCount) + 1; // [1, rowCount]
 
         return productService.getProductId(rowNumber).get(0).getProductId();
     }
 
     private String getUserId() {
-        int userId = random.nextInt((int) userCount);
+        int userId = random.nextInt((int) userCount) + 1; // [1, userCount]
         return "user-" + userId;
     }
 

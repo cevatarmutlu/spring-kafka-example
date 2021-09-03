@@ -8,8 +8,6 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-// Object Serilize ile Event nesnesi yazabilirim kafkaya sanırım.
-
 @Entity
 @Table(name = "events")
 @Getter

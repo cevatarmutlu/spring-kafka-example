@@ -27,16 +27,13 @@ public class KafkaConsumer {
     private EventService service;
 
     private CountDownLatch latch = new CountDownLatch(1);
-    private String payload = null;
 
     @KafkaListener(topics = "${kafka.topic}", id = "${kafka.group-id}")
-    public void receive(@Payload Event event, @Headers MessageHeaders messageHeaders) {
-        LOGGER.error("received data: {} ", event.toString());
-        setPayload(event.toString());
+    public void receive(@Payload Event event) {
+        LOGGER.info("received data: {} ", event.toString());
         latch.countDown();
 
         service.save(event);
     }
-
 
 }

@@ -15,8 +15,15 @@ public class EventService {
     @Autowired
     private EventRepository eventRepository;
 
-    public List<BestsellerQueryResponse> getAll(int limit) {
-        return eventRepository.findBestProduct(limit);
+    public List<BestsellerQueryResponse> getBestsellerProducts(int limit) {
+        return eventRepository.findBestsellerProducts(limit);
+    }
+
+    public List<Event> getAll() {
+        List<Event> events = new ArrayList<>();
+        eventRepository.findAll().forEach(events::add);
+
+        return events;
     }
 
 }

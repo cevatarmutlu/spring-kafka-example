@@ -10,7 +10,12 @@ import java.util.List;
 
 public interface EventRepository extends CrudRepository<Event, String> {
 
-    @Query(value = "SELECT product_id AS productId, count(*) AS count FROM events e GROUP BY product_id ORDER BY count DESC LIMIT :limit",
+    @Query(value = "" +
+            "SELECT product_id AS productId, count(*) AS count " +
+            "FROM events e " +
+            "GROUP BY product_id " +
+            "ORDER BY count DESC " +
+            "LIMIT :limit",
             nativeQuery = true)
-    List<BestsellerQueryResponse> findBestProduct(@Param("limit") int limit);
+    List<BestsellerQueryResponse> findBestsellerProducts(@Param("limit") int limit);
 }
