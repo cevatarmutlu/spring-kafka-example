@@ -3,6 +3,7 @@ package hepsiburada.homework.eventconsumer.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Table(name = "events")
 @Getter
 @Setter
+@ToString
 public class Event {
 
     @Id
@@ -31,13 +33,4 @@ public class Event {
         this.timestamp = new Timestamp(timestamp);
     }
 
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", productId='" + productId + '\'' +
-                ", userId='" + userId + '\'' +
-                ", timestamp=" + timestamp +
-                '}';
-    }
 }

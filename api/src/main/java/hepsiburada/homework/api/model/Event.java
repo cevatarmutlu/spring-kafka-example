@@ -1,22 +1,20 @@
 package hepsiburada.homework.api.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Tables;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Timestamp;
-import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
 @Table(name = "events")
+@ToString
 public class Event {
 
     @Id
@@ -32,13 +30,4 @@ public class Event {
     @Column(name = "timestamp")
     private Timestamp timestamp;
 
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", productId='" + productId + '\'' +
-                ", userId='" + userId + '\'' +
-                ", timestamp=" + timestamp +
-                '}';
-    }
 }
