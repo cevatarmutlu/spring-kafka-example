@@ -22,8 +22,7 @@ public class APIController {
 
     @GetMapping(value = "/bestseller")
     public List<BestsellerQueryResponse> bestseller(
-            @RequestParam(defaultValue = "5")
-            @Min(value = 1) Integer maxProductCount
+            @RequestParam Integer maxProductCount
     ) {
         return service.getBestsellerProducts(maxProductCount);
     }
