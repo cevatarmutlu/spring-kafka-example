@@ -5,20 +5,26 @@ import hepsiburada.homework.api.model.Event;
 import hepsiburada.homework.api.service.EventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/event")
 @RequiredArgsConstructor
+@Validated
 public class APIController {
 
     @Autowired
     private EventService service;
 
     @GetMapping(value = "/bestseller")
-    public List<BestsellerQueryResponse> bestseller(@RequestParam int maxProductCount) {
+    public List<BestsellerQueryResponse> bestseller(
+            @RequestParam(defaultValue = "5")
+            @Min(value = 1) Integer maxProductCount
+    ) {
         return service.getBestsellerProducts(maxProductCount);
     }
 
