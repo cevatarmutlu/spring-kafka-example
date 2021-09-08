@@ -18,7 +18,7 @@ public class Event {
 
     @Id
     @Column(name = "id")
-    private String id = UUID.randomUUID().toString();;
+    private String id = UUID.randomUUID().toString();
 
     @Column(name = "product_id")
     private String productId;
